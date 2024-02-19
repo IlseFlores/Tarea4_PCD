@@ -3,11 +3,13 @@ from database import Base
 
 #esquema de mi base de datos
 #define el esquema de mi tabla
-class Books(Base):
-    __tablename__ = "books"
+class Users(Base):
+    __tablename__ = "main"
 
+    name = Column(String)
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String)
-    author = Column(String)
-    description = Column(String)
-    rating = Column(Integer)
+    email = Column(String)
+    age = Column(Integer)
+    recommendations = Column(String)
+    zip = Column(String)
+
