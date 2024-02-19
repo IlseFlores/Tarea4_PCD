@@ -5,7 +5,7 @@ import models
 from database import engine, SessionLocal
 from sqlalchemy.orm import Session
 import uvicorn
-from typing import Optional
+from typing import Optional, List
 
 app = FastAPI()
 models.Base.metadata.create_all(bind=engine)
@@ -22,7 +22,7 @@ class User(BaseModel):
     id: int = Field(gt=-1, lt=101)
     email: str = Field(min_length=1, max_length=5000)
     age: Optional[int] = None
-    recommendations: str = Field(min_length=1)
+    recommendations: List[str] = Field(min_length=1)
     zip:Optional[str]= None
 
 @app.post("/")
