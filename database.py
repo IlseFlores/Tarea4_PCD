@@ -1,3 +1,5 @@
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 #url de mi db
 SQLALCHEMY_DATABASE_URL = "sqlite:///./books.db"
