@@ -65,7 +65,7 @@ def update_user(user_id: int, user: User, db: Session = Depends(get_db)):
             status_code=404,
             detail=f"ID {user_id} : Does not exist"
         )
-    user_model = models.Users()
+    #user_model = models.Users()
     user_model.name = user.name
     user_model.id = user.id
     user_model.email = user.email
@@ -76,7 +76,7 @@ def update_user(user_id: int, user: User, db: Session = Depends(get_db)):
     db.add(user_model)
     db.commit()
 
-    return user
+    return user_model
 
 @app.get("/{user_id}")
 def read_api(user_id: int,db: Session = Depends(get_db)):
