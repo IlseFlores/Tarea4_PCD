@@ -22,7 +22,7 @@ class User(BaseModel):
     id: int = Field(gt=-1, lt=101)
     email: str = Field(min_length=1, max_length=5000)
     age: Optional[int] = None
-    recommendations: List[str] = Field(min_length=1)
+    recommendations: str = Field(default_factory=list)
     zip:Optional[str]= None
 
 @app.post("/")
